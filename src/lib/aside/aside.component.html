@@ -1,0 +1,42 @@
+<aside [@slide]="position" *ngIf="visibleStatus">
+
+    <!-- Custom Header -->
+    <ng-content *ngIf="!showDefaultHeader" select="header"></ng-content>
+    <!-- End Custom Header -->
+
+
+    <!-- Default Header -->
+    <header *ngIf="showDefaultHeader">
+        <div class="aside-title">
+            header {{visibleStatus}}
+        </div>
+
+        <div (click)="hideAside()" class="aside-button-close">
+            &times;
+        </div>
+
+    </header>
+    <!-- End Custom Header -->
+
+
+    <section>
+        <div class="aside-container">
+            <ng-content></ng-content>
+        </div>
+    </section>
+
+    <!-- Custom Footer -->
+    <ng-content *ngIf="!showDefaultFooter" select="footer"></ng-content>
+    <!-- End Custom Footer -->
+
+    <!-- Default Footer -->
+    <footer *ngIf="showDefaultFooter">
+
+        <button (click)="hideAside($event)" type="button" class="btn btn-secondary">Close</button>
+        <button (click)="submitAside($event)" type="button" class="btn btn-primary">Save</button>
+
+
+    </footer>
+    <!--End  Default Footer -->
+
+</aside>

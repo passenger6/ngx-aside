@@ -1,0 +1,8 @@
+{
+  "name": "ngx-aside",
+  "version": "1.0.0",
+  "description": "Simple angular aside component",
+  "main": "./aside",
+  "author": "",
+  "license": "ISC"
+}
