@@ -94,7 +94,7 @@ export class NgxAsideComponent implements OnInit {
         }
     }
 
-    @HostListener('keydown.esc', ['$event'])
+    @HostListener('document:keydown.esc', ['$event'])
     handleEscape (event) {
 
         if (this.closeOnEscape) {
