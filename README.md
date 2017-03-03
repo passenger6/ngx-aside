@@ -4,6 +4,15 @@ Simple Angular Sidebar Panel.
   
 # Usage
 
+```TypeScript
+//app.module.ts
+import { NgxAsideModule } from 'ngx-aside';
+
+@NgModule({
+    imports: [NgxAsideModule]
+    })
+
+```
 
 ```
 <ngx-aside #NgxAsidePanelRight
@@ -25,7 +34,7 @@ You can disable default header and footer of panel
     [showDefaultHeader]="false"
 ```
 
-```
+```Html
 Add custom header and foter to the Panel 
     
     <ngx-aside #NgxAsidePanelRight
