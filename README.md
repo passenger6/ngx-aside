@@ -11,10 +11,9 @@ import { NgxAsideModule } from 'ngx-aside';
 @NgModule({
     imports: [NgxAsideModule]
     })
-
 ```
 
-```
+```Html
 <ngx-aside #NgxAsidePanelRight
            (cancel)="onCancel()"
            (submit)="onSave()"
@@ -29,14 +28,18 @@ import { NgxAsideModule } from 'ngx-aside';
 
 ```
 You can disable default header and footer of panel
-    
+```
+
+```Html    
     [showDefaultFooter]="false"
     [showDefaultHeader]="false"
 ```
 
+```
+Add custom header and foter to the Panel
+```
+
 ```Html
-Add custom header and foter to the Panel 
-    
     <ngx-aside #NgxAsidePanelRight
                [showDefaultFooter]="false"
                [showDefaultHeader]="false">
@@ -58,7 +61,7 @@ Add custom header and foter to the Panel
  Position left |  Position right
  ------------ | -------------
 ![alt text](screenshot.png "Sidebar panel.") | ![alt text](screenshot-right.png "Sidebar panel.")
-<br/><br/>Custom header and footer |  
+<br/>Custom header and footer |  
 ![alt text](screenshot-custom.png "Sidebar panel.") |
 
 
