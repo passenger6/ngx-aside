@@ -1,6 +1,6 @@
 # NgxAside
 
-Simple Angular Sidebar Panel.
+Angular Aside Component. Simple Angular Sidebar Panel.
   
 # Usage
 

@@ -1,7 +1,7 @@
 {
   "name": "ngx-aside",
-  "version": "0.0.0",
-  "license": "MIT",
+  "version": "1.0.1",
+  "license": "Apache",
   "main": "./src/lib/aside",
   "scripts": {
     "ng": "ng",
@@ -11,7 +11,21 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+"repository": {
+    "type": "git",
+    "url": "git+https://github.com/passenger6/ngx-aside.git"
+  },
+"keywords": [
+    "angular 2",
+    "angular 4",
+    "typescript",
+    "ngx-aside",
+    "aside",
+    "Angular Component",
+    "Angular Aside",
+    "Aside Panel"
+  ],
+  "homepage": "https://github.com/passenger6/ngx-aside",
   "dependencies": {
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
