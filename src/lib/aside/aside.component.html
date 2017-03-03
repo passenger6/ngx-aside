@@ -1,14 +1,17 @@
 <aside [@slide]="position" *ngIf="visibleStatus">
 
     <!-- Custom Header -->
-    <ng-content *ngIf="!showDefaultHeader" select="header"></ng-content>
+    <ng-content *ngIf="!showDefaultHeader" class="aside-title-huj" select="header">
+
+
+    </ng-content>
     <!-- End Custom Header -->
 
 
     <!-- Default Header -->
     <header *ngIf="showDefaultHeader">
         <div class="aside-title">
-            header {{visibleStatus}}
+            header
         </div>
 
         <div (click)="hideAside()" class="aside-button-close">

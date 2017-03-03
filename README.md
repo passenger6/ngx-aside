@@ -1,27 +1,64 @@
 # NgxAside
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
+Simple Angular Sidebar Panel.
+  
+# Usage
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+```
+<ngx-aside #NgxAsidePanelRight
+           (cancel)="onCancel()"
+           (submit)="onSave()"
+           [closeOnEscape]="false"
+           [showOverlay]="false"
+           [showDefaultFooter]="true"
+           [showDefaultHeader]="true">
+           
+<button (click)="NgxAsidePanelLeft.show()">Show Sidebar panel</button>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+```
 
-## Build
+```
+You can disable default header and footer of panel
+    
+    [showDefaultFooter]="false"
+    [showDefaultHeader]="false"
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
+Add custom header and foter to the Panel 
+    
+    <ngx-aside #NgxAsidePanelRight
+               [showDefaultFooter]="false"
+               [showDefaultHeader]="false">
+    
+        <header>My own header with own styles</header>
+        
+    
+        <footer>
+            My own footer, with custom buttons
+            <button (click)="NgxAsidePanelRight.hide()">
+                Close
+            </button>
+        </footer>
+    
+    </ngx-aside>
+
+```
+##Demo
+ Position left |  Position right
+ ------------ | -------------
+![alt text](screenshot.png "Sidebar panel.") | ![alt text](screenshot-right.png "Sidebar panel.")
+<br/><br/>Custom header and footer |  
+![alt text](screenshot-custom.png "Sidebar panel.") |
+
+
+## Start demo application
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.

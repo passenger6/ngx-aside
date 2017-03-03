@@ -2,18 +2,35 @@
 <button (click)="NgxAsidePanelRight.show()">Show Aside from Right side</button>
 
 <ngx-aside #NgxAsidePanelLeft [position]="'left'">
-  <h1>Test Aside Right panel</h1>
-  fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer
-  lacinia.
+
+
+    <h1> Test Aside Left panel</h1>
+
+    <code>Default configuration</code>
+    <code>
+
+    </code>
 </ngx-aside>
 
 
-<ngx-aside #NgxAsidePanelRight (cancel)="onCancel()" (submit)="onSave()" [closeOnEscape]="true" [showOverlay]="false" [showDefaultFooter]="true"
-  [showDefaultHeader]="true">
-  <h1>Test Aside Right panel</h1>
+<ngx-aside #NgxAsidePanelRight
+           (cancel)="onCancel()"
+           (submit)="onSave()"
+           [closeOnEscape]="false"
+           [showOverlay]="false"
+           [showDefaultFooter]="false"
+           [showDefaultHeader]="false">
 
-   Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-  posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+    <header style="padding: 10px; background-color:#607d8b; color: #fafafa ">My own header with own styles</header>
 
+    <h1>Sidebar content</h1>
+
+
+    <footer style="padding: 20px; background-color: #009688;">
+        My own footer, with custom buttons
+        <button (click)="NgxAsidePanelRight.hide()">
+            Close
+        </button>
+    </footer>
 
 </ngx-aside>
