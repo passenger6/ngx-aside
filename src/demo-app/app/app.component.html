@@ -1,7 +1,10 @@
 <button (click)="NgxAsidePanelLeft.show()">Show Aside from Left side</button>
 <button (click)="NgxAsidePanelRight.show()">Show Aside from Right side</button>
 
-<ngx-aside #NgxAsidePanelLeft [position]="'left'">
+<ngx-aside #NgxAsidePanelLeft 
+[position]="'left'"
+[title]="'Aside title'"
+>
 
 
     <h1> Test Aside Left panel</h1>
@@ -16,6 +19,7 @@
 <ngx-aside #NgxAsidePanelRight
            (cancel)="onCancel()"
            (submit)="onSave()"
+           
            [closeOnEscape]="false"
            [showOverlay]="false"
            [showDefaultFooter]="false"

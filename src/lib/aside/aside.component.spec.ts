@@ -65,7 +65,6 @@ describe('Component: Aside', () => {
 
     it('should hide a panel by pressing escape button', async(() => {
 
-
         component.show();
         fixture.detectChanges();
 

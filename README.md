@@ -17,6 +17,7 @@ import { NgxAsideModule } from 'ngx-aside';
 <ngx-aside #NgxAsidePanelRight
            (cancel)="onCancel()"
            (submit)="onSave()"
+           [title]="Title"
            [closeOnEscape]="false"
            [showOverlay]="false"
            [showDefaultFooter]="true"
@@ -34,7 +35,7 @@ You can disable default header and footer of panel
 ```
 
 
-Add custom header and foter to the Panel
+Add custom header and footer to the panel
 ```Html
     <ngx-aside #NgxAsidePanelRight
                [showDefaultFooter]="false"
@@ -67,6 +68,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Karma].
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
