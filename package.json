@@ -1,7 +1,7 @@
 {
   "name": "ngx-aside",
-  "version": "1.0.1",
-  "license": "Apache",
+  "version": "1.0.3",
+  "license": "MIT",
   "main": "./src/lib/aside",
   "scripts": {
     "ng": "ng",
