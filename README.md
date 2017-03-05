@@ -2,6 +2,16 @@
 
 Angular Aside Component. Simple Angular Sidebar Panel.
   
+<hr>
+
+[Live Demo](https://embed.plnkr.co/yEIYsIGLIf8MGYOC2h25/)
+
+<hr>
+
+# Installation
+
+npm install --save ngx-aside
+
 # Usage
 
 ```TypeScript
@@ -54,7 +64,7 @@ Add custom header and footer to the panel
     </ngx-aside>
 
 ```
-#Demo
+# Screenshots
 
 [Live Demo](https://embed.plnkr.co/yEIYsIGLIf8MGYOC2h25/)
 <br/>
