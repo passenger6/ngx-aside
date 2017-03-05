@@ -28,7 +28,7 @@ import { NgxAsideModule } from 'ngx-aside';
 <ngx-aside #NgxAsidePanelRight
            (cancel)="onCancel()"
            (submit)="onSave()"
-           [title]="Title"
+           [title]="'Title'"
            [closeOnEscape]="false"
            [showOverlay]="false"
            [showDefaultFooter]="true"
