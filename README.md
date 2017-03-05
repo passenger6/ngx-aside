@@ -54,7 +54,11 @@ Add custom header and footer to the panel
     </ngx-aside>
 
 ```
-##Demo
+#Demo
+
+[Live Demo](https://embed.plnkr.co/yEIYsIGLIf8MGYOC2h25/)
+<br/>
+
  Position left |  Position right
  ------------ | -------------
 ![alt text](screenshot.png "Sidebar panel.") | ![alt text](screenshot-right.png "Sidebar panel.")
