@@ -10,8 +10,9 @@ Angular Aside Component. Simple Angular Sidebar Panel.
 
 # Installation
 
+```shell
 npm install --save ngx-aside
-
+```
 # Usage
 
 ```TypeScript
@@ -75,6 +76,9 @@ Add custom header and footer to the panel
 <br/>Custom header and footer |  
 ![alt text](screenshot-custom.png "Sidebar panel.") |
 
+
+## Install demo application
+Run `npm install` for install all dependencies.
 
 ## Start demo application
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
