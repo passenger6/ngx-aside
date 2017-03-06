@@ -15,24 +15,6 @@ import { NgxAsideModule } from './aside.module';
 import { By } from '@angular/platform-browser';
 
 
-function createKeyboardEvent (type: string, keyCode: number) {
-    let event = document.createEvent('KeyboardEvent') as any;
-    // Firefox does not support `initKeyboardEvent`, but supports `initKeyEvent`.
-    let initEventFn = (event.initKeyEvent || event.initKeyboardEvent).bind(event);
-
-    initEventFn(type, true, true, window, 0, 0, 0, 0, 0, keyCode);
-
-    // Webkit Browsers don't set the keyCode when calling the init function.
-    // See related bug https://bugs.webkit.org/show_bug.cgi?id=16735
-    Object.defineProperty(event, 'keyCode', {
-        get: function () {
-            return keyCode;
-        }
-    });
-
-    return event;
-}
-
 describe('Component: Aside', () => {
     let component: NgxAsideComponent;
     let fixture: ComponentFixture<NgxAsideComponent>;
