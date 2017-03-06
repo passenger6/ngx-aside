@@ -15,10 +15,29 @@ import { NgxAsideModule } from './aside.module';
 import { By } from '@angular/platform-browser';
 
 
+function createKeyboardEvent (type: string, keyCode: number) {
+    let event = document.createEvent('KeyboardEvent') as any;
+    // Firefox does not support `initKeyboardEvent`, but supports `initKeyEvent`.
+    let initEventFn = (event.initKeyEvent || event.initKeyboardEvent).bind(event);
+
+    initEventFn(type, true, true, window, 0, 0, 0, 0, 0, keyCode);
+
+    // Webkit Browsers don't set the keyCode when calling the init function.
+    // See related bug https://bugs.webkit.org/show_bug.cgi?id=16735
+    Object.defineProperty(event, 'keyCode', {
+        get: function () {
+            return keyCode;
+        }
+    });
+
+    return event;
+}
+
 describe('Component: Aside', () => {
     let component: NgxAsideComponent;
     let fixture: ComponentFixture<NgxAsideComponent>;
     let debugElement: DebugElement;
+    let element: HTMLElement;
 
 
     beforeEach(() => {
@@ -62,28 +81,38 @@ describe('Component: Aside', () => {
 
     });
 
+    it('should set title of aside', () => {
+        const title = 'My Test Title';
+
+        component.title = title;
+        component.show();
+
+        fixture.detectChanges();
+        debugElement = fixture.debugElement.query(By.css('.aside-title'));
+        element = debugElement.nativeElement;
+
+        expect(element.textContent).toContain(title);
+    });
+
 
     it('should hide a panel by pressing escape button', async(() => {
-
         component.show();
         fixture.detectChanges();
 
         debugElement = fixture.debugElement;
 
-        const event = new KeyboardEvent('keydown', {
-            bubbles: true,
-            cancelable: true,
-            key: 'Escape',
-            shiftKey: true
 
+        const e = new KeyboardEvent('keydown', {
+            bubbles: false,
+            cancelable: true,
         });
 
+        Object.defineProperty(e, 'which', {'value': 27})
+        Object.defineProperty(e, 'keyCode', {'value': 27})
+        Object.defineProperty(e, 'key', {'value': 'Escape'})
+        Object.defineProperty(e, 'char', {'value': 'Escape'})
 
-        Object.defineProperty(event, 'which', {'value': 27});
-        Object.defineProperty(event, 'keyCode', {'value': 27});
-
-
-        debugElement.nativeElement.dispatchEvent(event);
+        document.dispatchEvent(e);
 
         fixture.detectChanges();
         fixture.whenStable().then(result => {
