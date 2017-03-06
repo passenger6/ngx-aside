@@ -35,8 +35,15 @@
     <!-- Default Footer -->
     <footer *ngIf="showDefaultFooter">
 
-        <button (click)="hideAside($event)" type="button" class="btn btn-secondary">{{cancelButtonTitle}}</button>
-        <button (click)="submitAside($event)" type="button" class="btn btn-primary">{{submitButtonTitle}}</button>
+        <button 
+         (click)="hideAside($event)"
+         type="button" class="btn btn-secondary btn-cancel">
+         {{cancelButtonTitle}}</button>
+
+        <button 
+         (click)="submitAside($event)"
+          type="button"
+          class="btn btn-primary btn-submit">{{submitButtonTitle}}</button>
 
 
     </footer>

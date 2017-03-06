@@ -77,6 +77,33 @@ describe('Component: Aside', () => {
     });
 
 
+    it('should set title of the default cancel button', () => {
+        const title = 'My Default Cancel Button';
+
+        component.cancelButtonTitle = title;
+        component.show();
+
+        fixture.detectChanges();
+        debugElement = fixture.debugElement.query(By.css('.btn-cancel'));
+        element = debugElement.nativeElement;
+
+        expect(element.textContent).toContain(title);
+    });
+
+    it('should set title of the default submit button', () => {
+        const title = 'My Default Submit Button';
+
+        component.submitButtonTitle = title;
+        component.show();
+
+        fixture.detectChanges();
+        debugElement = fixture.debugElement.query(By.css('.btn-submit'));
+        element = debugElement.nativeElement;
+
+        expect(element.textContent).toContain(title);
+    });
+
+
     it('should hide a panel by pressing escape button', async(() => {
         component.show();
         fixture.detectChanges();
