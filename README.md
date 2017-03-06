@@ -34,6 +34,8 @@ import { NgxAsideModule } from 'ngx-aside';
            [showDefaultFooter]="true"
            [showDefaultHeader]="true">
            
+</ngx-aside>
+
 <button (click)="NgxAsidePanelLeft.show()">Show Sidebar panel</button>
 
 ```

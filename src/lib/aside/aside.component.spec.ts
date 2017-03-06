@@ -89,10 +89,10 @@ describe('Component: Aside', () => {
             cancelable: true,
         });
 
-        Object.defineProperty(e, 'which', {'value': 27})
-        Object.defineProperty(e, 'keyCode', {'value': 27})
-        Object.defineProperty(e, 'key', {'value': 'Escape'})
-        Object.defineProperty(e, 'char', {'value': 'Escape'})
+        Object.defineProperty(e, 'which', {'value': 27});
+        Object.defineProperty(e, 'keyCode', {'value': 27});
+        Object.defineProperty(e, 'key', {'value': 'Escape'});
+        Object.defineProperty(e, 'char', {'value': 'Escape'});
 
         document.dispatchEvent(e);
 
