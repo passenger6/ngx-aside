@@ -4,6 +4,8 @@
 <ngx-aside #NgxAsidePanelLeft 
 [position]="'left'"
 [title]="'Aside title'"
+[cancelButtonTitle]="'Discard'"
+[submitButtonTitle]="'Send'"
 >
 
 
@@ -23,7 +25,9 @@
            [closeOnEscape]="false"
            [showOverlay]="false"
            [showDefaultFooter]="false"
-           [showDefaultHeader]="false">
+           [showDefaultHeader]="false"
+           
+           >
 
     <header style="padding: 10px; background-color:#607d8b; color: #fafafa ">My own header with own styles</header>
 

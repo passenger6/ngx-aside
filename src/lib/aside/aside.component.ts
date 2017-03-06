@@ -45,12 +45,16 @@ export class NgxAsideComponent implements OnInit {
 
 
     @Input() position = 'right';
-    @Input() showDefaultFooter = true;
-    @Input() showDefaultHeader = true;
     @Input() showOverlay = true;
     @Input() closeOnEscape = true;
-    @Input() title = '';
 
+
+    @Input() showDefaultFooter = true;
+    @Input() showDefaultHeader = true;
+
+    @Input() title = '';
+    @Input() cancelButtonTitle = 'Cancel';
+    @Input() submitButtonTitle = 'Submit';
 
     @HostBinding('class') cssClasses: HostBinding;
 
