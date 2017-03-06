@@ -66,6 +66,13 @@ footer {
   button {
     margin-right: 6px;
   }
+  .left &{
+    justify-content: flex-end;
+  }
+
+  .right &{
+    justify-content: flex-start;
+  }
   .button-cancel {
 
   }

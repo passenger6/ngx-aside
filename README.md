@@ -26,11 +26,17 @@ import { NgxAsideModule } from 'ngx-aside';
 
 ```Html
 <ngx-aside #NgxAsidePanelRight
+           
            (cancel)="onCancel()"
            (submit)="onSave()"
+
            [title]="'Title'"
+           [cancelButtonTitle]="'Discard'"  <!-- Default: 'Cancel' -->
+           [submitButtonTitle]="'Send'" <!-- Default: 'Submit' -->
+
            [closeOnEscape]="false"
            [showOverlay]="false"
+
            [showDefaultFooter]="true"
            [showDefaultHeader]="true">
            
