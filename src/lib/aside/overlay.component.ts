@@ -1,11 +1,14 @@
 import {
-    Component,
+    Component
+} from '@angular/core';
+
+
+import {
     trigger,
     transition,
     style,
     animate
-} from '@angular/core';
-
+} from '@angular/animations';
 
 @Component({
     selector: 'ngx-aside-overlay',
@@ -37,11 +40,11 @@ export class NgxOverlayComponent {
     showStatus: boolean;
     // @HostBinding('style.opacity') opacity;
 
-    constructor () {
+    constructor() {
         this.showStatus = true;
     }
 
-    ngAfterContentInit () {
+    ngAfterContentInit() {
 
 
     }
