@@ -1,37 +1,47 @@
-<button (click)="NgxAsidePanelLeft.show()">Show Aside from Left side</button>
-<button (click)="NgxAsidePanelRight.show()">Show Aside from Right side</button>
+<div class="header">
+    <div>
+        <button class="btn btn-default hamburger" (click)="NgxAsidePanelLeft.show()">
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </button>
+        Show aside from the left side
+    </div>
+    <div>
+        Show aside from the right side
+        <button class="btn btn-default hamburger" (click)="NgxAsidePanelRight.show()">
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </button>
 
-<ngx-aside #NgxAsidePanelLeft 
-[position]="'left'"
+    </div>
 
-[title]="'Aside title'"
-[cancelButtonTitle]="'Discard'"
-[submitButtonTitle]="'Send'"
+</div>
+
+
+<ngx-aside #NgxAsidePanelLeft
+           [position]="'left'"
+           [title]="'Aside title'"
+           [cancelButtonTitle]="'Discard'"
+           [submitButtonTitle]="'Send'"
 >
     <h1> Test Aside Left panel</h1>
-
     <code>Default configuration</code>
-    <code>
-
-    </code>
 </ngx-aside>
 
 
 <ngx-aside #NgxAsidePanelRight
            (cancel)="onCancel()"
            (submit)="onSave()"
-           
+
+           [position]="'right'"
            [closeOnEscape]="false"
            [showOverlay]="false"
            [showDefaultFooter]="false"
            [showDefaultHeader]="false"
-           
-           >
+
+>
 
     <header style="padding: 10px; background-color:#607d8b; color: #fafafa ">My own header with own styles</header>
 
     <h1>Sidebar content</h1>
-
 
     <footer style="padding: 20px; background-color: #009688;">
         My own footer, with custom buttons
@@ -41,3 +51,55 @@
     </footer>
 
 </ngx-aside>
+
+<div class="demo">
+<pre style="background:#fff;color:#000">
+Left:
+<span style="color:#3a4a64">&lt;<span style="color:#3a4a64">ngx</span><span style="color:#3a4a64">-aside</span> #<span
+        style="color:#3a4a64">NgxAsidePanelLeft</span>
+           [<span style="color:#3a4a64">position</span>]=<span style="color:#409b1c">"'left'"</span>
+           [<span style="color:#3a4a64">title</span>]=<span style="color:#409b1c">"'Aside title'"</span>
+           [<span style="color:#3a4a64">cancelButtonTitle</span>]=<span style="color:#409b1c">"'Discard'"</span>
+           [<span style="color:#3a4a64">submitButtonTitle</span>]=<span style="color:#409b1c">"'Send'"</span>
+></span>
+    <span style="color:#3a4a64">&lt;<span style="color:#3a4a64">h1</span>></span> Test Aside Left panel<span
+        style="color:#3a4a64">&lt;/<span style="color:#3a4a64">h1</span>></span>
+    <span style="color:#3a4a64">&lt;<span style="color:#3a4a64">code</span>></span>Default configuration<span
+        style="color:#3a4a64">&lt;/<span style="color:#3a4a64">code</span>></span>
+<span style="color:#3a4a64">&lt;/<span style="color:#3a4a64">ngx</span><span style="color:#3a4a64">-aside</span>></span>
+
+Right:
+<span style="color:#3a4a64">&lt;<span style="color:#3a4a64">ngx</span><span style="color:#3a4a64">-aside</span> #<span
+        style="color:#3a4a64">NgxAsidePanelRight</span>
+           (<span style="color:#3a4a64">cancel</span>)=<span style="color:#409b1c">"onCancel()"</span>
+           (<span style="color:#3a4a64">submit</span>)=<span style="color:#409b1c">"onSave()"</span>
+
+           [<span style="color:#3a4a64">closeOnEscape</span>]=<span style="color:#409b1c">"false"</span>
+           [<span style="color:#3a4a64">showOverlay</span>]=<span style="color:#409b1c">"false"</span>
+           [<span style="color:#3a4a64">showDefaultFooter</span>]=<span style="color:#409b1c">"false"</span>
+           [<span style="color:#3a4a64">showDefaultHeader</span>]=<span style="color:#409b1c">"false"</span>
+
+></span>
+
+    <span style="color:#3a4a64">&lt;<span style="color:#3a4a64">header</span> <span
+            style="color:#3a4a64">style</span>=<span style="color:#409b1c">"padding: 10px; background-color:#607d8b; color: #fafafa "</span>></span>My own header with own styles<span
+        style="color:#3a4a64">&lt;/<span style="color:#3a4a64">header</span>></span>
+
+    <span style="color:#3a4a64">&lt;<span style="color:#3a4a64">h1</span>></span>Sidebar content<span
+        style="color:#3a4a64">&lt;/<span style="color:#3a4a64">h1</span>></span>
+
+    <span style="color:#3a4a64">&lt;<span style="color:#3a4a64">footer</span> <span
+            style="color:#3a4a64">style</span>=<span
+            style="color:#409b1c">"padding: 20px; background-color: #009688;"</span>></span>
+        My own footer, with custom buttons
+        <span style="color:#3a4a64">&lt;<span style="color:#3a4a64">button</span> (<span
+                style="color:#3a4a64">click</span>)=<span
+                style="color:#409b1c">"NgxAsidePanelRight.hide()"</span>></span>
+            Close
+        <span style="color:#3a4a64">&lt;/<span style="color:#3a4a64">button</span>></span>
+    <span style="color:#3a4a64">&lt;/<span style="color:#3a4a64">footer</span>></span>
+
+<span style="color:#3a4a64">&lt;/<span style="color:#3a4a64">ngx</span><span style="color:#3a4a64">-aside</span>></span>
+
+</pre>
+</div>
