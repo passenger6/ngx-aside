@@ -1,3 +1,5 @@
+import { AsideContainerComponent } from './aside-container/aside-container.component';
+import { OutletDirective } from './outlet.directive';
 import {
     Component,
     Input,
@@ -8,10 +10,9 @@ import {
     HostBinding,
     OnInit,
     HostListener,
-    ComponentFactoryResolver
-}
-    from
-        "@angular/core";
+    ComponentFactoryResolver,
+    ViewChild
+} from '@angular/core';
 
 import { NgxOverlayComponent } from './overlay.component';
 import { slideAnimations } from './aside.animations';
@@ -39,6 +40,7 @@ import { slideAnimations } from './aside.animations';
 
 export class NgxAsideComponent implements OnInit {
 
+    @ViewChild(AsideContainerComponent) asideContainer: AsideContainerComponent;
 
     @Output() cancel: EventEmitter<any> = new EventEmitter();
     @Output() submit: EventEmitter<any> = new EventEmitter();
@@ -64,15 +66,15 @@ export class NgxAsideComponent implements OnInit {
     private rootViewContainerRef: ViewContainerRef;
 
 
-    constructor (private _resolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) {
+    constructor(private _resolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) {
         this.rootViewContainerRef = vcRef;
     }
 
-    ngOnInit () {
+    ngOnInit() {
         this.cssClasses = this.position;
     }
 
-    private addOverlay () {
+    private addOverlay() {
         if (!this.backdrop && this.showOverlay) {
             const OverlayComponentFactory = this._resolver.resolveComponentFactory(NgxOverlayComponent);
             this.backdrop = this.rootViewContainerRef.createComponent(OverlayComponentFactory, 0);
@@ -80,7 +82,7 @@ export class NgxAsideComponent implements OnInit {
     }
 
 
-    hideAside (event) {
+    hideAside(event) {
         if (this.cancel.observers.length > 0) {
             this.cancel.emit(event);
         } else { // If we don`t have any subscribers
@@ -90,7 +92,7 @@ export class NgxAsideComponent implements OnInit {
     }
 
 
-    submitAside () {
+    submitAside() {
         if (this.cancel.observers.length > 0) {
             this.submit.emit();
         } else {  // If we don`t have any subscribers
@@ -100,7 +102,7 @@ export class NgxAsideComponent implements OnInit {
     }
 
     @HostListener('document:keydown.esc', ['$event'])
-    handleEscape (event) {
+    handleEscape(event) {
 
         if (this.closeOnEscape) {
             event.preventDefault();
@@ -111,9 +113,8 @@ export class NgxAsideComponent implements OnInit {
         return false;
     }
 
-    hide () {
-
-
+    hide() {
+        this.asideContainer.hide();
         this.visibleStatus = false;
 
         if (!this.backdrop) {
@@ -125,7 +126,8 @@ export class NgxAsideComponent implements OnInit {
 
     }
 
-    show () {
+    show() {
+        this.asideContainer.show();
         this.visibleStatus = true;
         this.addOverlay();
     }
