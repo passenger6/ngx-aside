@@ -19,11 +19,15 @@
 <ngx-aside #NgxAsidePanelLeft
            [position]="'left'"
            [title]="'Aside title'"
-           [cancelButtonTitle]="'Discard'"
-           [submitButtonTitle]="'Send'"
 >
+    <header>
+        This is a header
+    </header>
     <h1> Test Aside Left panel</h1>
     <code>Default configuration</code>
+    <footer>
+        this is a footer
+    </footer>
 </ngx-aside>
 
 
@@ -35,8 +39,7 @@
            [position]="'right'"
            [closeOnEscape]="false"
            [showOverlay]="false"
-           [showDefaultFooter]="false"
-           [showDefaultHeader]="false"
+           
 
 >
 

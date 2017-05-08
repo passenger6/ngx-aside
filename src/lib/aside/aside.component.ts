@@ -15,13 +15,13 @@ import {
 } from '@angular/core';
 
 import { NgxOverlayComponent } from './overlay.component';
-import { slideAnimations } from './aside.animations';
+import { leftSideAnimations, rightideAnimations } from './aside.animations';
 
 @Component({
     selector: 'ngx-aside',
     templateUrl: './aside.component.html',
     styleUrls: ['./aside.component.scss'],
-    animations: [slideAnimations]
+    animations: [leftSideAnimations, rightideAnimations]
 })
 
 /*
@@ -40,7 +40,7 @@ import { slideAnimations } from './aside.animations';
 
 export class NgxAsideComponent implements OnInit {
 
-    @ViewChild(AsideContainerComponent) asideContainer: AsideContainerComponent;
+    @ViewChild(OutletDirective) outlet: OutletDirective;
 
     @Output() cancel: EventEmitter<any> = new EventEmitter();
     @Output() submit: EventEmitter<any> = new EventEmitter();
@@ -50,21 +50,16 @@ export class NgxAsideComponent implements OnInit {
     @Input() showOverlay = true;
     @Input() closeOnEscape = true;
 
+    @Input() maxWidth = '500px';
 
-    @Input() showDefaultFooter = true;
-    @Input() showDefaultHeader = true;
-
-    @Input() title = '';
-    @Input() cancelButtonTitle = 'Cancel';
-    @Input() submitButtonTitle = 'Submit';
 
     @HostBinding('class') cssClasses: HostBinding;
 
 
     private backdrop: ComponentRef<{}>;
-    visibleStatus: boolean = false;
     private rootViewContainerRef: ViewContainerRef;
-
+    public position_animation = '';
+    private animationInProgress = false;
 
     constructor(private _resolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) {
         this.rootViewContainerRef = vcRef;
@@ -103,7 +98,6 @@ export class NgxAsideComponent implements OnInit {
 
     @HostListener('document:keydown.esc', ['$event'])
     handleEscape(event) {
-
         if (this.closeOnEscape) {
             event.preventDefault();
             this.hideAside(event);
@@ -113,22 +107,37 @@ export class NgxAsideComponent implements OnInit {
         return false;
     }
 
-    hide() {
-        this.asideContainer.hide();
-        this.visibleStatus = false;
+    animationDone($event, type) {
+        console.log('event:', $event)
+        console.log(type);
+        console.log('$event.toState', $event.toState);
+        if ($event.toState === 'hide' && type === this.position) {
+            this.outlet.detach();
+        }
+        this.animationInProgress = false;
+    }
 
+    animationStarted(event) {
+        this.animationInProgress = true;
+    }
+
+    hide() {
+        this.position_animation = 'hide';
         if (!this.backdrop) {
             return;
         }
-
         this.backdrop.destroy();
         this.backdrop = void 0;
 
     }
 
     show() {
-        this.asideContainer.show();
-        this.visibleStatus = true;
+        console.log('this.animationInProgress', this.animationInProgress);
+        if (this.animationInProgress) {
+            return;
+        }
+        this.position_animation = this.position;
+        this.outlet.attach();
         this.addOverlay();
     }
 }

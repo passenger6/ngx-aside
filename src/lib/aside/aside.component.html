@@ -1,52 +1,32 @@
-<ngx-aside-container [@slide]="position" [className]="position">
-    <aside >
+<aside
+    [@slideLeft]="position_animation" 
 
+    (@slideLeft.done)="animationDone($event, 'left')"
+    (@slideLeft.start)="animationStarted($event)"
+    
+    
+    
+    [className]="position"
+
+    [@slideRight]="position_animation" 
+    (@slideRight.done)="animationDone($event,'right')"
+    (@slideRight.start)="animationStarted($event)"
+    
+    >
+    
+    <ng-container *ngxOutlet="">
         <!-- Custom Header -->
         <ng-content *ngIf="!showDefaultHeader" class="aside-title" select="header">
         </ng-content>
         <!-- End Custom Header -->
-
-
-        <!-- Default Header -->
-        <header *ngIf="showDefaultHeader">
-            <div class="aside-title">
-                {{title}}
-            </div>
-
-            <div (click)="hideAside()" class="aside-button-close">
-                &times;
-            </div>
-
-        </header>
-        <!-- End Custom Header -->
-
 
         <section>
             <div class="aside-container">
                 <ng-content></ng-content>
             </div>
         </section>
-
         <!-- Custom Footer -->
         <ng-content *ngIf="!showDefaultFooter" select="footer"></ng-content>
         <!-- End Custom Footer -->
-
-        <!-- Default Footer -->
-        <footer *ngIf="showDefaultFooter">
-
-            <button 
-            (click)="hideAside($event)"
-            type="button" class="btn btn-secondary btn-cancel">
-            {{cancelButtonTitle}}</button>
-
-            <button 
-            (click)="submitAside($event)"
-            type="button"
-            class="btn btn-primary btn-submit">{{submitButtonTitle}}</button>
-
-
-        </footer>
-        <!--End  Default Footer -->
-
-    </aside>
-</ngx-aside-container>
+    </ng-container>
+</aside>
