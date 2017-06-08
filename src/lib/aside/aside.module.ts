@@ -1,3 +1,4 @@
+import { AsideService } from './aside.service';
 import { OutletDirective } from './outlet.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,7 +20,11 @@ import { AsideContainerComponent } from './aside-container/aside-container.compo
         AsideContainerComponent,
         OutletDirective
     ],
-    entryComponents: [NgxOverlayComponent]
+    entryComponents: [
+        NgxOverlayComponent,
+        NgxAsideComponent
+    ],
+    providers: [AsideService]
 })
 
 export class NgxAsideModule {

@@ -13,7 +13,7 @@ export class AsideContainerComponent implements OnInit {
   constructor() { }
 
   show() {
-    this.outlet.attach();
+    //this.outlet.attach();
   }
 
   hide() {

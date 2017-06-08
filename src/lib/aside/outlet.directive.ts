@@ -2,7 +2,8 @@ import {
     Directive,
     TemplateRef,
     ViewContainerRef,
-    ViewRef
+    ViewRef,
+    ComponentFactoryResolver
 } from '@angular/core';
 
 
@@ -14,14 +15,16 @@ export class OutletDirective {
     attached: ViewRef;
     content: TemplateRef<any>;
 
-    constructor(private _vcr: ViewContainerRef, private _templateRef: TemplateRef<any>) {
+    constructor(private _vcRef: ViewContainerRef, private _resolver: ComponentFactoryResolver) {
 
     }
 
 
-    attach() {
-        this.content = this._templateRef;
-        this.attached = this._vcr.createEmbeddedView(this.content);
+    attach(component: any) {
+        component = this._resolver.resolveComponentFactory(component);
+        const componentInstance = this._vcRef.createComponent(component, 0);
+        //this.content = _templateRef;
+        //this.attached = this._vcr.createEmbeddedView(this.content);
     }
 
     hasAttached() {
@@ -29,7 +32,7 @@ export class OutletDirective {
     }
 
     detach() {
-        this._vcr.detach();
+        this._vcRef.detach();
         this.attached = null;
     }
 }

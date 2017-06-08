@@ -1,4 +1,5 @@
 <aside
+    #aside
     [@slideLeft]="position_animation" 
 
     (@slideLeft.done)="animationDone($event, 'left')"
@@ -15,18 +16,6 @@
     >
     
     <ng-container *ngxOutlet="">
-        <!-- Custom Header -->
-        <ng-content *ngIf="!showDefaultHeader" class="aside-title" select="header">
-        </ng-content>
-        <!-- End Custom Header -->
-
-        <section>
-            <div class="aside-container">
-                <ng-content></ng-content>
-            </div>
-        </section>
-        <!-- Custom Footer -->
-        <ng-content *ngIf="!showDefaultFooter" select="footer"></ng-content>
-        <!-- End Custom Footer -->
     </ng-container>
+    
 </aside>

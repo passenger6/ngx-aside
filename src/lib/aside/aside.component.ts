@@ -11,7 +11,12 @@ import {
     OnInit,
     HostListener,
     ComponentFactoryResolver,
-    ViewChild
+    ViewChild,
+    AfterViewInit,
+    AfterContentInit,
+    Renderer2,
+    ElementRef,
+    ContentChild
 } from '@angular/core';
 
 import { NgxOverlayComponent } from './overlay.component';
@@ -40,7 +45,9 @@ import { leftSideAnimations, rightideAnimations } from './aside.animations';
 
 export class NgxAsideComponent implements OnInit {
 
+
     @ViewChild(OutletDirective) outlet: OutletDirective;
+
 
     @Output() cancel: EventEmitter<any> = new EventEmitter();
     @Output() submit: EventEmitter<any> = new EventEmitter();
@@ -50,9 +57,6 @@ export class NgxAsideComponent implements OnInit {
     @Input() showOverlay = true;
     @Input() closeOnEscape = true;
 
-    @Input() maxWidth = '500px';
-
-
     @HostBinding('class') cssClasses: HostBinding;
 
 
@@ -61,9 +65,20 @@ export class NgxAsideComponent implements OnInit {
     public position_animation = '';
     private animationInProgress = false;
 
-    constructor(private _resolver: ComponentFactoryResolver, private vcRef: ViewContainerRef) {
+
+
+    constructor(private _resolver: ComponentFactoryResolver,
+        private vcRef: ViewContainerRef,
+        private _elementRef: ElementRef,
+        private _renederer: Renderer2) {
         this.rootViewContainerRef = vcRef;
     }
+
+    ngAfterContentInit(): void {
+        //  this._asideService.init(this.rootViewContainerRef);
+    }
+
+
 
     ngOnInit() {
         this.cssClasses = this.position;
@@ -108,9 +123,7 @@ export class NgxAsideComponent implements OnInit {
     }
 
     animationDone($event, type) {
-        console.log('event:', $event)
-        console.log(type);
-        console.log('$event.toState', $event.toState);
+
         if ($event.toState === 'hide' && type === this.position) {
             this.outlet.detach();
         }
@@ -137,7 +150,11 @@ export class NgxAsideComponent implements OnInit {
             return;
         }
         this.position_animation = this.position;
-        this.outlet.attach();
         this.addOverlay();
+    }
+
+    slide() {
+        debugger;
+        this._renederer.setStyle(this.outlet, `width`, `20px`);
     }
 }
