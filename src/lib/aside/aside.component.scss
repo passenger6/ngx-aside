@@ -4,12 +4,12 @@
     box-sizing: border-box;
   }
 
-  &.right aside {
+  & aside.right {
     right: 0;
     top: 0;
     bottom: 0;
   }
-  &.left aside {
+  & aside.left {
     left: 0;
     top: 0;
     bottom: 0;
@@ -29,12 +29,13 @@ aside {
   z-index: 2;
   box-shadow: -6px 3px 11px 0px rgba(0, 0, 0, 0.23);
   padding: 0 16px;
+  height: 100vh;
 
 }
 
 section {
-  height: 100vh;
   overflow: auto;
+  flex-grow: 1;
 }
 
 header {
@@ -45,6 +46,8 @@ header {
   align-items: center;
   width: 100%;
   height: 64px;
+  flex-grow: 1;
+  flex-shrink: 0;
 
   .aside-button-close {
     width: 20px;
@@ -58,6 +61,8 @@ header {
 }
 
 footer {
+  flex-grow: 1;
+  flex-shrink: 0;
   border-top: 1px solid #e5e5e5;
   display: flex;
   align-items: flex-start;
