@@ -18,11 +18,17 @@ npm install --save ngx-aside
 ```TypeScript
 //app.module.ts
 import { NgxAsideModule } from 'ngx-aside';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-    imports: [NgxAsideModule]
+    imports: [
+        NgxAsideModule,
+        BrowserAnimationsModule
+        ]
     })
 ```
+For animations please import the ```BrowserAnimationsModule```.
+ Angular animations are built on top of the standard Web Animations API and run natively on browsers that support it.
 
 ```Html
 <ngx-aside #NgxAsidePanelRight

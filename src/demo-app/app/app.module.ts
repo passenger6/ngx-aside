@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { NgxAsideModule } from '../../lib/aside/aside.module';
 
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+
+
     ],
     imports: [
         BrowserModule,
-        NgxAsideModule
+        NgxAsideModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,11 +1,10 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {NgxOverlayComponent} from './overlay.component';
-import {NgxAsideComponent} from './aside.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgxOverlayComponent } from './overlay.component';
+import { NgxAsideComponent } from './aside.component';
 
 @NgModule({
-    imports: [CommonModule, BrowserAnimationsModule],
+    imports: [CommonModule],
     exports: [NgxAsideComponent],
     declarations: [
         NgxAsideComponent,
