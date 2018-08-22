@@ -28,7 +28,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     })
 ```
 For animations please import the ```BrowserAnimationsModule```.
- Angular animations are built on top of the standard Web Animations API and run natively on browsers that support it.
 
 ```Html
 <ngx-aside #NgxAsidePanelRight
