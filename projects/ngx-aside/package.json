@@ -1,0 +1,27 @@
+{
+  "name": "ngx-aside",
+  "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/passenger6/ngx-aside.git"
+  },
+  "keywords": [
+    "ng2-aside",
+    "ng aside",
+    "angular 2",
+    "angular 4",
+    "angular 6",
+    "typescript",
+    "ngx-aside",
+    "aside",
+    "Angular Component",
+    "Angular Aside",
+    "Aside Panel"
+  ],
+  "homepage": "https://github.com/passenger6/ngx-aside",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/animations": "^6.0.0-rc.0 || ^6.0.0"
+  }
+}
