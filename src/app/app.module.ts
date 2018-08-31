@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxAsideModule } from 'ngx-aside';
-
+import { NgxAsideModule } from '../../projects/ngx-aside/src/lib';
 
 @NgModule({
   declarations: [
