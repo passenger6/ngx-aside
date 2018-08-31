@@ -1,0 +1,1 @@
+{"__symbolic":"module","version":4,"exports":[{"export":[{"name":"NgxAsideModule","as":"NgxAsideModule"}],"from":"./aside.module"}],"metadata":{},"origins":{},"importAs":"ngx-aside"}

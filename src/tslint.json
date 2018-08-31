@@ -1,0 +1,17 @@
+{
+    "extends": "../tslint.json",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "na",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "na",
+            "kebab-case"
+        ]
+    }
+}

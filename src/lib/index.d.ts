@@ -1,1 +1,0 @@
-export { NgxAsideModule } from './aside/';
