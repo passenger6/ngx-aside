@@ -4,7 +4,7 @@ Angular Aside Component. Simple Angular Sidebar Panel.
   
 <hr>
 
-[Demo](https://stackblitz.com/edit/github-q7dd3w?embed=1&file=src/demo-app/main.ts)
+[Demo](https://stackblitz.com/edit/github-2w7ln4?file=src%2Fapp%2Fapp.module.ts)
 
 <hr>
 
