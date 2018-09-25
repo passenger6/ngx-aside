@@ -15,7 +15,6 @@ import { NgxOverlayComponent } from './overlay.component';
 import { slideAnimations } from './aside.animations';
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'ngx-aside',
   templateUrl: './aside.component.html',
   styleUrls: ['./aside.component.scss'],
@@ -51,7 +50,7 @@ export class NgxAsideComponent {
   @Input() public cancelButtonTitle = 'Cancel';
   @Input() public submitButtonTitle = 'Submit';
 
-  public visibleStatus = false;
+  public visibleStatus: boolean = false;
   private rootViewContainerRef: ViewContainerRef;
   private backdrop: ComponentRef<{}>;
 

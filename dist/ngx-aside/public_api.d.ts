@@ -1,1 +1,1 @@
-export * from './lib';
+export * from './lib/aside.module';

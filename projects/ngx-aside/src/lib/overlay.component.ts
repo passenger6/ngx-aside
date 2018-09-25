@@ -10,7 +10,6 @@ import {
 } from '@angular/animations';
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'ngx-aside-overlay',
   template: `
         <div class="overlay" [@show]="showStatus"></div>`,

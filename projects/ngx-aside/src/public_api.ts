@@ -2,4 +2,4 @@
  * Public API Surface of ngx-aside
  */
 
-export * from './lib';
+export * from './lib/aside.module';
