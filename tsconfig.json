@@ -1,5 +1,8 @@
 {
   "compileOnSave": false,
+  "exclude": [
+    "dist"
+  ],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
