@@ -1,17 +1,17 @@
 :host {
-  * {
-    box-sizing: border-box;
-  }
-  & aside.right {
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
-  & aside.left {
-    left: 0;
-    top: 0;
-    bottom: 0;
-  }
+    * {
+        box-sizing: border-box;
+    }
+    & aside.right {
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    & aside.left {
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
 }
 
 aside {

@@ -81,8 +81,6 @@ Add custom header and footer to the panel
 ```
 # Screenshots
 
-[Live Demo](https://embed.plnkr.co/yEIYsIGLIf8MGYOC2h25/)
-<br/>
 
  Position left |  Position right
  ------------ | -------------
